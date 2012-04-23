@@ -8,7 +8,13 @@ void reduce(RN this) {
 }
 
 RN newS(char *S) {
-  return newI(0,1);
+  RN result = (RN) malloc(sizeof(RN));
+  int i = 0, j = 0;
+  sscanf(S, "%d/%d", &i, &j);
+  result->N = i;
+  result->D = j;
+  
+  return result;
 }
 
 RN newI(int N, int D) {
