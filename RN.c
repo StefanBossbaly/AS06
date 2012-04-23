@@ -14,6 +14,9 @@ RN newS(char *S) {
   result->N = i;
   result->D = j;
   
+  //Reduce the RN before we return it
+  reduce(result);
+  
   return result;
 }
 
@@ -21,6 +24,10 @@ RN newI(int N, int D) {
   RN result = (RN)malloc(sizeof(RN));
   result->N = N;  
   result->D = D;
+  
+  //Reduce the RN before we return it
+  reduce(result);
+  
   return result;
 } 
 
