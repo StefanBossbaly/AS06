@@ -2,6 +2,7 @@
 #define NC    '\0'
 #define BLANK ' '
 #define SLASH '/'
+#include <stdio.h>
 
 void reduce(RN this) {
 }
@@ -18,18 +19,23 @@ RN newI(int N, int D) {
 } 
 
 char *toString(RN this) {
-  return NULL;
+  char string[LIMIT];
+  sprintf(string, "%d%c%d", Nof(this), SLASH, Dof(this));
+  return &string;
 }
 
 int Nof(RN this) {
-  return 0;
+  return this->N;
 }
 
 int Dof(RN this) {
-  return 1;
+  return this->D;
 }
 
 void invert(RN this) {
+    int temp = this->D;
+    this->D = this->N;
+    this->N = temp;
 }
 
 void add(RN this, RN that) {
