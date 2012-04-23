@@ -18,7 +18,8 @@
 #define COMPARE 'C'
 
 void print(RN this) {
-  printf(" %s",toString(this));
+  char buffer[16];
+  printf(" %s",toString(buffer, this));
 }
 
 void println(RN this) {

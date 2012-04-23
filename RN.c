@@ -31,10 +31,9 @@ RN newI(int N, int D) {
   return result;
 } 
 
-char *toString(RN this) {
-  char string[LIMIT];
-  sprintf(string, "%d%c%d", Nof(this), SLASH, Dof(this));
-  return string;
+char *toString(char *buffer, RN this) {
+  sprintf(buffer, "%d%c%d", Nof(this), SLASH, Dof(this));
+  return buffer;
 }
 
 int Nof(RN this) {

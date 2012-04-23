@@ -11,7 +11,7 @@ RN newI(int N, int D);
 void reduce(RN this);
 
 //Accessors
-char *toString(RN this);
+char *toString(char *buffer, RN this);
 int Nof(RN this);
 int Dof(RN this);
 
