@@ -1,0 +1,6 @@
+#Output Files
+*.o
+*.out
+
+#Temp Files
+*.*~
