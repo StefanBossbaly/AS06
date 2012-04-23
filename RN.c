@@ -27,7 +27,7 @@ RN newI(int N, int D) {
 char *toString(RN this) {
   char string[LIMIT];
   sprintf(string, "%d%c%d", Nof(this), SLASH, Dof(this));
-  return &string;
+  return string;
 }
 
 int Nof(RN this) {
