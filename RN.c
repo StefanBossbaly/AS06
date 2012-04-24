@@ -4,6 +4,13 @@
 #include "RN.h"
 
 void reduce(RN this) {
+    //Normalize the negative sign
+	if (this->N < 0 && this->D < 0) {
+		this->D = abs(this->D);
+	} else if (this->N >= 0 && this->D < 0) {
+		this->D = abs(this->D);
+		this->N = this->N * -1;
+	}
 	//get the greatest common denominator
 	int gcd = GCD(this->N, this->D);
 
@@ -34,6 +41,10 @@ int GCD(int num1, int num2) {
 
 int min(int num1, int num2) {
 	return (num1 > num2) ? num1 : num2;
+}
+
+int abs(int num){
+    return (num > 0) ? num : num * -1;
 }
 
 RN newS(char *S) {

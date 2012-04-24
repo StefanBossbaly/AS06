@@ -21,7 +21,10 @@ void reduce(RN this);
 //Other private functions
 int GCD(int num1, int num2);
 int LCM(int num1, int num2);
+
+//Math helper functions
 int min(int num1, int num2);
+int abs(int num);
 
 //Accessors
 char *toString(char *buffer, RN this);
