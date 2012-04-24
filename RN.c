@@ -104,6 +104,8 @@ void multiply(RN this, RN that) {
 
     this->N = (a * c);
     this->D = (b * d);
+
+    reduce(this);
 }
 
 void divide(RN this, RN that) {
