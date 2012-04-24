@@ -29,7 +29,8 @@ void println(RN this) {
 RN read() {
   RN result;
   char input[LIMIT];
-  printf(":"); scanf("%s",input);
+  printf(":"); 
+  scanf("%s",input);
   result = newS(input);
   return result;
 }
@@ -51,20 +52,26 @@ int main() {
   int toPrint;
   do {
     toPrint = 1;
-    printf("?"); scanf("%s",input);
+    printf("?"); 
+    scanf("%s",input);
     if(input[0] == WHAT) {
-      printWHAT();  toPrint = 0;
+      printWHAT();  
+      toPrint = 0;
     } else if(input[0] == READ) {
       X = read();
     } else if(input[0] == PRINT) {
     } else if(input[0] == ADD) {
-      Y = read();  add(X,Y);
+      Y = read();  
+      add(X,Y);
     } else if(input[0] == SUBTRACT) {
-      Y = read();  subtract(X,Y);
+      Y = read();
+      subtract(X,Y);
     } else if(input[0] == MULTIPLY) {
-      Y = read();  multiply(X,Y);
+      Y = read();  
+      multiply(X,Y);
     } else if(input[0] == DIVIDE) {
-      Y = read();  divide(X,Y);
+      Y = read();
+      divide(X,Y);
     } else if(input[0] == NUM) {
       toPrint = 0;
       printf("%d\n",Nof(X));
