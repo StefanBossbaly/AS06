@@ -97,6 +97,13 @@ void subtract(RN this, RN that) {
 }
 
 void multiply(RN this, RN that) {
+    int a = this->N;
+    int b = this->D;
+    int c = that->N;
+    int d = that->D;
+
+    this->N = (a * c);
+    this->D = (b * d);
 }
 
 void divide(RN this, RN that) {
