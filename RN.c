@@ -4,11 +4,14 @@
 #include "RN.h"
 
 void reduce(RN this) {
+	//get the greatest common denominator
 	int gcd = GCD(this->N, this->D);
 
+	//if the gcd is equal to 1 or -1 we don't need to divide
 	if (gcd == 1 || gcd == -1)
 		return;
 
+	//divide both the numerator and denominator by the gcd to reduce
 	this->N = this->N / gcd;
 	this->D = this->D / gcd;
 }
@@ -58,6 +61,7 @@ RN newI(int N, int D) {
 }
 
 char *toString(char *buffer, RN this) {
+	//format the string as N/D
 	sprintf(buffer, "%d%c%d", Nof(this), SLASH, Dof(this));
 	return buffer;
 }
@@ -71,6 +75,7 @@ int Dof(RN this) {
 }
 
 void invert(RN this) {
+	//invert so that N = D and D = N
 	int temp = this->D;
 	this->D = this->N;
 	this->N = temp;
@@ -82,6 +87,7 @@ void add(RN this, RN that) {
 	int c = that->N;
 	int d = that->D;
 
+	//formula for adding two fraction
 	this->N = (a * d) + (b * c);
 	this->D = (b * d);
 
@@ -94,6 +100,7 @@ void subtract(RN this, RN that) {
 	int c = that->N;
 	int d = that->D;
 
+	//formula for subtracting two fraction
 	this->N = (a * d) - (b * c);
 	this->D = (b * d);
 
@@ -106,6 +113,7 @@ void multiply(RN this, RN that) {
 	int c = that->N;
 	int d = that->D;
 
+	//formula for multiplying two fraction
 	this->N = (a * c);
 	this->D = (b * d);
 
@@ -118,8 +126,10 @@ void divide(RN this, RN that) {
 	int c = that->N;
 	int d = that->D;
 
+	//make sure that c != 0
 	assert(c != 0);
 
+	//formula for dividing two fraction
 	this->N = (a * d);
 	this->D = (b * c);
 
