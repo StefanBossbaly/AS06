@@ -85,6 +85,15 @@ void add(RN this, RN that) {
 }
 
 void subtract(RN this, RN that) {
+    int a = this->N;
+    int b = this->D;
+    int c = that->N;
+    int d = that->D;
+
+    this->N = (a * d) - (b * c);
+    this->D = (b * d);
+
+    reduce(this);
 }
 
 void multiply(RN this, RN that) {
