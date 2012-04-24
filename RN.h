@@ -5,7 +5,10 @@
 
 // Rational Numbers
 
-typedef struct RNS {int N; int D; } *RN;
+typedef struct RNS {
+	int N;
+	int D;
+}*RN;
 
 //Constructors
 
@@ -30,5 +33,4 @@ void divide(RN this, RN that);
 
 //Conventional
 int compareTo(RN this, RN that);
-
 
