@@ -14,6 +14,7 @@ RN newI(int N, int D);
 
 //Sort of private (because the represetation is always reduced)
 void reduce(RN this);
+int GCD(RN this, RN that);
 
 //Accessors
 char *toString(char *buffer, RN this);
