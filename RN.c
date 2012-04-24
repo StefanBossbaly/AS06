@@ -4,10 +4,10 @@
 void reduce(RN this) {
 }
 
-int GCD(RN this, RN that){
+int LCM(RN this, RN that){
 }
 
-int LCM(int num1, int num2){
+int GCD(int num1, int num2){
     int start = (min(num1, num2) + 1) / 2;
     
     for (int i = start; i > 0; i--){
