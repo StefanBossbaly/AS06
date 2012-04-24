@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "RN.h"
 
 void reduce(RN this) {
