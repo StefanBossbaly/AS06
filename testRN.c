@@ -58,28 +58,18 @@ int main() {
 			printWHAT();
 			toPrint = 0;
 		} else if (input[0] == READ) {
-			if (X != NULL)
-				free(X);
 			X = read();
 		} else if (input[0] == PRINT) {
 		} else if (input[0] == ADD) {
-			if (Y != NULL)
-				free(Y);
 			Y = read();
 			add(X, Y);
 		} else if (input[0] == SUBTRACT) {
-			if (Y != NULL)
-				free(Y);
 			Y = read();
 			subtract(X, Y);
 		} else if (input[0] == MULTIPLY) {
-			if (Y != NULL)
-				free(Y);
 			Y = read();
 			multiply(X, Y);
 		} else if (input[0] == DIVIDE) {
-			if (Y != NULL)
-				free(Y);
 			Y = read();
 			divide(X, Y);
 		} else if (input[0] == NUM) {
@@ -92,8 +82,6 @@ int main() {
 			invert(X);
 		} else if (input[0] == COMPARE) {
 			toPrint = 0;
-			if (Y != NULL)
-				free(Y);
 			Y = read();
 			printf(" %d\n", compareTo(X, Y));
 		} else if (input[0] != QUIT) {
