@@ -16,9 +16,9 @@ void reduce(RN this) {
 	this->D = this->D / gcd;
 }
 
-int LCM(RN this, RN that) {
+int LCM(int num1, int num2) {
 	//TODO implement a better algorithm then this atrocity
-	return (this->D * that->D);
+	return (num1 * num2);
 }
 
 int GCD(int num1, int num2) {
@@ -137,6 +137,15 @@ void divide(RN this, RN that) {
 }
 
 int compareTo(RN this, RN that) {
-	int result = 0;
-	return result;
+	int lcm = LCM(this->D, that->D);
+
+	int num1 = this->D * lcm;
+	int num2 = that->D * lcm;
+
+	if (num1 > num2)
+		return 1;
+	else if (num2 > num1)
+		return -1;
+	else
+		return 0;
 }
