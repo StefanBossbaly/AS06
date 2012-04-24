@@ -21,7 +21,7 @@ RN newS(char *S) {
 }
 
 RN newI(int N, int D) {
-  RN result = (RN)malloc(sizeof(RN));
+  RN result = (RN) malloc(sizeof(RN));
   result->N = N;  
   result->D = D;
   
