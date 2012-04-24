@@ -12,6 +12,8 @@ void reduce(RN this) {
 }
 
 int LCM(RN this, RN that){
+    //TODO implement a better algorithm then this atrocity
+    return (this->D * that->D);
 }
 
 int GCD(int num1, int num2){
