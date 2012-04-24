@@ -1,0 +1,10 @@
+## Compiling ##
+
+To compile the program please run the following command
+    gcc testRN.c RN.c -o RN.o
+
+## Running ##
+
+To run the program please run the following command
+    ./RN.o
+
