@@ -1,7 +1,7 @@
 ## Compiling ##
 
 To compile the program please run the following command
-    gcc testRN.c RN.c -o RN.o
+    gcc --std=c99 testRN.c RN.c -o RN.o
 
 ## Running ##
 
