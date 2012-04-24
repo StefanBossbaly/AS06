@@ -44,6 +44,9 @@ RN newS(char *S) {
 }
 
 RN newI(int N, int D) {
+    //No divide by zero
+    assert(D != 0);
+    
 	RN result = (RN) malloc(sizeof(RN));
 	result->N = N;
 	result->D = D;
