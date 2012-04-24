@@ -7,11 +7,11 @@ void reduce(RN this) {
 int GCD(RN this, RN that){
 }
 
-int LCM(RN this){
-    int start = (min(this->D, this->N) + 1) / 2;
+int LCM(int num1, int num2){
+    int start = (min(num1, num2) + 1) / 2;
     
     for (int i = start; i > 0; i--){
-        if (this->D % i == 0 && this->N % i == 0)
+        if ((num1 % i == 0) && (num2 % i == 0))
             return i;
     }
 
