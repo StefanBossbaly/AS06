@@ -2,6 +2,13 @@
 #include "RN.h"
 
 void reduce(RN this) {
+    int gcd = GCD(this->N, this->D);
+    
+    if (gcd == 1 || gcd == -1)
+        return;
+
+    this->N = this->N / gcd;
+    this->D = this->D / gcd;
 }
 
 int LCM(RN this, RN that){
