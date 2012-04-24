@@ -4,3 +4,8 @@
 
 #Temp Files
 *.*~
+*~
+
+#Eclipse
+.cproject
+.project
