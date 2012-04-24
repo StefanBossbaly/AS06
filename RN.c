@@ -37,10 +37,10 @@ int min(int num1, int num2) {
 }
 
 RN newS(char *S) {
-	int i = 0, j = 0;
-	sscanf(S, "%d/%d", &i, &j);
+	int n = 0, d = 0;
+	sscanf(S, "%d/%d", &n, &d);
 	
-	return newI(i, j);
+	return newI(n, d);
 }
 
 RN newI(int N, int D) {
