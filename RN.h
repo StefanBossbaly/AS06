@@ -1,3 +1,8 @@
+#define LIMIT 16
+#define NC    '\0'
+#define BLANK ' '
+#define SLASH '/'
+
 // Rational Numbers
 
 typedef struct RNS {int N; int D; } *RN;

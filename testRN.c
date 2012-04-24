@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 #include "RN.h"
-#include "RN.c"
 
 #define WHAT '?'
 #define QUIT 'Q'

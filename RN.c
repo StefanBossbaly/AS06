@@ -1,8 +1,5 @@
-#define LIMIT 16
-#define NC    '\0'
-#define BLANK ' '
-#define SLASH '/'
 #include <stdio.h>
+#include "RN.h"
 
 void reduce(RN this) {
 }
