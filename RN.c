@@ -133,8 +133,8 @@ void divide(RN this, RN that) {
 int compareTo(RN this, RN that) {
 	int lcm = LCM(this->D, that->D);
 
-	int num1 = this->D * lcm;
-	int num2 = that->D * lcm;
+	int num1 = this->N * (lcm / this->D);
+	int num2 = that->N * (lcm / that->D);
 
 	if (num1 > num2)
 		return 1;
