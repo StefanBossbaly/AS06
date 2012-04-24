@@ -107,6 +107,17 @@ void multiply(RN this, RN that) {
 }
 
 void divide(RN this, RN that) {
+    int a = this->N;
+    int b = this->D;
+    int c = that->N;
+    int d = that->D;
+
+    assert(c != 0);
+    
+    this->N = (a * d);
+    this->D = (b * c);
+
+    reduce(this);
 }
 
 int compareTo(RN this, RN that) {
