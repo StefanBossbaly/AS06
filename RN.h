@@ -17,7 +17,11 @@ RN newI(int N, int D);
 
 //Sort of private (because the represetation is always reduced)
 void reduce(RN this);
+
+//Other private functions
 int GCD(int num1, int num2);
+int LCM(RN this, RN that);
+int min(int num1, int num2);
 
 //Accessors
 char *toString(char *buffer, RN this);
