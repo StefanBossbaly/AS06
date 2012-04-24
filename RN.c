@@ -37,16 +37,10 @@ int min(int num1, int num2) {
 }
 
 RN newS(char *S) {
-	RN result = (RN) malloc(sizeof(RN));
 	int i = 0, j = 0;
 	sscanf(S, "%d/%d", &i, &j);
-	result->N = i;
-	result->D = j;
-
-	//Reduce the RN before we return it
-	reduce(result);
-
-	return result;
+	
+	return newI(i, j);
 }
 
 RN newI(int N, int D) {
