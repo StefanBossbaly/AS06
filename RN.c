@@ -30,16 +30,19 @@ int LCM(int num1, int num2) {
 }
 
 int GCD(int num1, int num2) {
+    //If the numbers are equal their values are the GCD
     if (num1 == num2)
         return num1;
     
-	int start = (min(num1, num2) + 1) / 2;
+    //
+	int start = ceil(min(num1, num2));
 
 	for (int i = start; i > 0; i--) {
 		if ((num1 % i == 0) && (num2 % i == 0))
 			return i;
 	}
-
+    
+    //Should never happen (under normal parameters)
 	return -1;
 }
 
@@ -49,6 +52,10 @@ int min(int num1, int num2) {
 
 int abs(int num){
     return (num > 0) ? num : num * -1;
+}
+
+int ceil(int num) {
+    return (num + 1) / 2;
 }
 
 RN newS(char *S) {
