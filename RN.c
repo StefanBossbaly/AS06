@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <math.h>
 #include "RN.h"
 
 void reduce(RN this) {
@@ -34,8 +35,7 @@ int GCD(int num1, int num2) {
     if (num1 == num2)
         return num1;
     
-    //
-	int start = ceil(min(num1, num2));
+	int start = (min(num1, num2) + 1) / 2;
 
 	for (int i = start; i > 0; i--) {
 		if ((num1 % i == 0) && (num2 % i == 0))
@@ -48,14 +48,6 @@ int GCD(int num1, int num2) {
 
 int min(int num1, int num2) {
 	return (num1 > num2) ? num1 : num2;
-}
-
-int abs(int num) {
-    return (num > 0) ? num : num * -1;
-}
-
-int ceil(int num) {
-    return (num + 1) / 2;
 }
 
 RN newS(char *S) {

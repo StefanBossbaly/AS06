@@ -24,8 +24,6 @@ int LCM(int num1, int num2);
 
 //Math helper functions
 int min(int num1, int num2);
-int abs(int num);
-int ceil(int num);
 
 //Accessors
 char *toString(char *buffer, RN this);
