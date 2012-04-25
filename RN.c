@@ -50,7 +50,7 @@ int min(int num1, int num2) {
 	return (num1 > num2) ? num1 : num2;
 }
 
-int abs(int num){
+int abs(int num) {
     return (num > 0) ? num : num * -1;
 }
 
