@@ -5,8 +5,9 @@
 
 void reduce(RN this) {
     //Normalize the negative sign
-	if (this->N < 0 && this->D < 0) {
+    if (this->N < 0 && this->D < 0) {
 		this->D = abs(this->D);
+		this->N = abs(this->N);
 	} else if (this->N >= 0 && this->D < 0) {
 		this->D = abs(this->D);
 		this->N = this->N * -1;
