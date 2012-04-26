@@ -62,6 +62,12 @@ RN *newI(int numerator, int denominator) {
     assert(denominator != 0);
     
 	RN *result = (RN *) malloc(sizeof(RN));
+	
+	if (result == NULL) {
+		printf("Error allocating memory");
+		exit(1);
+	}
+	
 	result->N = numerator;
 	result->D = denominator;
 
