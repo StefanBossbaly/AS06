@@ -50,20 +50,20 @@ int min(int num1, int num2) {
 	return (num1 > num2) ? num1 : num2;
 }
 
-RN newS(char *S) {
+RN newS(char *string) {
 	int n = 0, d = 0;
-	sscanf(S, "%d/%d", &n, &d);
+	sscanf(string, "%d/%d", &n, &d);
 	
 	return newI(n, d);
 }
 
-RN newI(int N, int D) {
+RN newI(int numerator, int denominator) {
     //No divide by zero
-    assert(D != 0);
+    assert(denominator != 0);
     
 	RN result = (RN) malloc(sizeof(RN));
-	result->N = N;
-	result->D = D;
+	result->N = numerator;
+	result->D = denominator;
 
 	//Reduce the RN before we return it
 	reduce(result);

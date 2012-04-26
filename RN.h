@@ -12,8 +12,8 @@ typedef struct RNS {
 
 //Constructors
 
-RN newS(char *S);
-RN newI(int N, int D);
+RN newS(char *string);
+RN newI(int numerator, int denominator);
 
 //Sort of private (because the represetation is always reduced)
 void reduce(RN this);
