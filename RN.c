@@ -4,7 +4,7 @@
 #include <math.h>
 #include "RN.h"
 
-void reduce(RN this) {
+void reduce(RN *this) {
     //Normalize the negative sign
     if (this->N < 0 && this->D < 0) {
 		this->D = abs(this->D);
@@ -50,18 +50,18 @@ int min(int num1, int num2) {
 	return (num1 > num2) ? num1 : num2;
 }
 
-RN newS(char *S) {
+RN *newS(char *S) {
 	int n = 0, d = 0;
 	sscanf(S, "%d/%d", &n, &d);
 	
 	return newI(n, d);
 }
 
-RN newI(int N, int D) {
+RN *newI(int N, int D) {
     //No divide by zero
     assert(D != 0);
     
-	RN result = (RN) malloc(sizeof(RN));
+	RN *result = (RN *) malloc(sizeof(RN));
 	result->N = N;
 	result->D = D;
 
@@ -71,28 +71,28 @@ RN newI(int N, int D) {
 	return result;
 }
 
-char *toString(char *buffer, RN this) {
+char *toString(char *buffer, RN *this) {
 	//format the string as N/D
 	sprintf(buffer, "%d%c%d", Nof(this), SLASH, Dof(this));
 	return buffer;
 }
 
-int Nof(RN this) {
+int Nof(RN *this) {
 	return this->N;
 }
 
-int Dof(RN this) {
+int Dof(RN *this) {
 	return this->D;
 }
 
-void invert(RN this) {
+void invert(RN *this) {
 	//invert so that N = D and D = N
 	int temp = this->D;
 	this->D = this->N;
 	this->N = temp;
 }
 
-void add(RN this, RN that) {
+void add(RN *this, RN *that) {
 	int a = this->N;
 	int b = this->D;
 	int c = that->N;
@@ -105,7 +105,7 @@ void add(RN this, RN that) {
 	reduce(this);
 }
 
-void subtract(RN this, RN that) {
+void subtract(RN *this, RN *that) {
 	int a = this->N;
 	int b = this->D;
 	int c = that->N;
@@ -118,7 +118,7 @@ void subtract(RN this, RN that) {
 	reduce(this);
 }
 
-void multiply(RN this, RN that) {
+void multiply(RN *this, RN *that) {
 	int a = this->N;
 	int b = this->D;
 	int c = that->N;
@@ -131,7 +131,7 @@ void multiply(RN this, RN that) {
 	reduce(this);
 }
 
-void divide(RN this, RN that) {
+void divide(RN *this, RN *that) {
 	int a = this->N;
 	int b = this->D;
 	int c = that->N;
@@ -147,7 +147,7 @@ void divide(RN this, RN that) {
 	reduce(this);
 }
 
-int compareTo(RN this, RN that) {
+int compareTo(RN *this, RN *that) {
 	int lcm = LCM(this->D, that->D);
 
 	int num1 = this->N * (lcm / this->D);

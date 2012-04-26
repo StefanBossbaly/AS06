@@ -16,18 +16,18 @@
 #define INVERT 'I'
 #define COMPARE 'C'
 
-void print(RN this) {
+void print(RN *this) {
 	char buffer[16];
 	printf(" %s", toString(buffer, this));
 }
 
-void println(RN this) {
+void println(RN *this) {
 	print(this);
 	printf("\n");
 }
 
-RN read() {
-	RN result;
+RN *read() {
+	RN *result;
 	char input[LIMIT];
 	printf(":");
 	scanf("%s", input);
@@ -46,8 +46,8 @@ void printWHAT() {
 }
 
 int main() {
-	RN X = newI(0, 1);
-	RN Y;
+	RN *X = newI(0, 1);
+	RN *Y;
 	char input[LIMIT];
 	int toPrint;
 	do {
