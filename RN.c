@@ -61,13 +61,17 @@ RN *newI(int numerator, int denominator) {
     //No divide by zero
     assert(denominator != 0);
     
+    //Get a pointer to a block of memory on the heap
 	RN *result = (RN *) malloc(sizeof(RN));
 	
+	//If the pointer is null the allocation failed
+	//Alert the user and exit the program
 	if (result == NULL) {
 		printf("Error allocating memory");
 		exit(1);
 	}
 	
+	//Set the vars in the struct
 	result->N = numerator;
 	result->D = denominator;
 
@@ -154,11 +158,14 @@ void divide(RN *this, RN *that) {
 }
 
 int compareTo(RN *this, RN *that) {
+    //Find the lcm of the two numbers
 	int lcm = LCM(this->D, that->D);
 
+    //Multiply the numerator to adjust for the common denominator
 	int num1 = this->N * (lcm / this->D);
 	int num2 = that->N * (lcm / that->D);
 
+    //Compare the numerator of the common denominator fraction
 	if (num1 > num2)
 		return 1;
 	else if (num2 > num1)
