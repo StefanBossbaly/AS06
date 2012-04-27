@@ -3,15 +3,13 @@
 #define BLANK ' '
 #define SLASH '/'
 
-// Rational Numbers
-
+//Rational Numbers
 typedef struct {
 	int N;
 	int D;
 } RN;
 
 //Constructors
-
 RN *newS(char *string);
 RN *newI(int numerator, int denominator);
 
