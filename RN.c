@@ -1,3 +1,7 @@
+//Rational Numbers Program
+//Author: Stefan Bossbaly
+//See RH.h for write up
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>

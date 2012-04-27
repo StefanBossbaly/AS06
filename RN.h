@@ -1,3 +1,18 @@
+/* Rational Numbers Program
+   Author: Stefan Bossbaly
+   Description: This program provides subroutines that mutate rational numbers
+   
+   Explanations for changes
+   (1) The char* toString(RM *this) subroutine was changed to char *toString(char *buffer, RN *this).
+   It is a normal c convention to have the client program provide the allocated space to save any sort
+   of data that will live past the scope of the subprogram. This helps with memory leaks.
+   
+   (2) RN was changed from a pointer to a struct. This does not change the way the program functions
+   however it makes it clear that we are passing an address to the subroutines and not pushing the values
+   contained by RN onto the runtime stack. This is a normal C convention and will also help when writing
+   the assembly language port of this program.
+*/
+
 #define LIMIT 16
 #define NC    '\0'
 #define BLANK ' '
