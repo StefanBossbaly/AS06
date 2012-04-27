@@ -17,7 +17,7 @@
 #define COMPARE 'C'
 
 void print(RN *this) {
-	char buffer[16];
+	char buffer[LIMIT];
 	printf(" %s", toString(buffer, this));
 }
 
