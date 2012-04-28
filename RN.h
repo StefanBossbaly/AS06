@@ -11,6 +11,15 @@
    however it makes it clear that we are passing an address to the subroutines and not pushing the values
    contained by RN onto the runtime stack. This is a normal C convention and will also help when writing
    the assembly language port of this program.
+   
+   (3) I added free calls where needed in the test program. I confirmed that there are no leaks using an
+   opensource program called Valgrind. Here is the output ....
+   
+   ==2857== HEAP SUMMARY:
+   ==2857==     in use at exit: 0 bytes in 0 blocks
+   ==2857==   total heap usage: 17 allocs, 17 frees, 2,120 bytes allocated
+   ==2857== 
+   ==2857== All heap blocks were freed -- no leaks are possible
 */
 
 #define LIMIT 16
