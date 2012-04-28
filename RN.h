@@ -1,6 +1,7 @@
 /* Rational Numbers Program
    Author: Stefan Bossbaly
    Description: This program provides subroutines that mutate rational numbers
+   Compile using: gcc --std=c99 testRN.c RN.c -o RN.o
    
    Explanations for changes
    (1) The char* toString(RM *this) subroutine was changed to char *toString(char *buffer, RN *this).
