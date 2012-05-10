@@ -40,6 +40,7 @@ RN *newI(int numerator, int denominator);
 
 //Sort of private (because the represetation is always reduced)
 void reduce(RN *this);
+void normalize(RN *this);
 
 //Other private functions
 int GCD(int num1, int num2);

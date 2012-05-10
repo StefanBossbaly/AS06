@@ -8,7 +8,7 @@
 #include <math.h>
 #include "RN.h"
 
-void reduce(RN *this) {
+void normalize(RN *this) {
     //Normalize the negative sign
     if (this->N < 0 && this->D < 0) {
 		this->D = abs(this->D);
@@ -16,7 +16,13 @@ void reduce(RN *this) {
 	} else if (this->N >= 0 && this->D < 0) {
 		this->D = abs(this->D);
 		this->N = this->N * -1;
-	}
+    }
+    
+    //reduce the fraction
+    reduce(this);
+}
+
+void reduce(RN *this) {
 	//get the greatest common denominator
 	int gcd = GCD(this->N, this->D);
 
@@ -79,8 +85,8 @@ RN *newI(int numerator, int denominator) {
 	result->N = numerator;
 	result->D = denominator;
 
-	//Reduce the RN before we return it
-	reduce(result);
+	//Normalize the RN before we return it
+	normalize(result);
 
 	return result;
 }
@@ -116,7 +122,7 @@ void add(RN *this, RN *that) {
 	this->N = (a * d) + (b * c);
 	this->D = (b * d);
 
-	reduce(this);
+	normalize(this);
 }
 
 void subtract(RN *this, RN *that) {
@@ -129,7 +135,7 @@ void subtract(RN *this, RN *that) {
 	this->N = (a * d) - (b * c);
 	this->D = (b * d);
 
-	reduce(this);
+	normalize(this);
 }
 
 void multiply(RN *this, RN *that) {
@@ -142,7 +148,7 @@ void multiply(RN *this, RN *that) {
 	this->N = (a * c);
 	this->D = (b * d);
 
-	reduce(this);
+	normalize(this);
 }
 
 void divide(RN *this, RN *that) {
@@ -158,7 +164,7 @@ void divide(RN *this, RN *that) {
 	this->N = (a * d);
 	this->D = (b * c);
 
-	reduce(this);
+	normalize(this);
 }
 
 int compareTo(RN *this, RN *that) {
