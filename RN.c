@@ -8,7 +8,7 @@
 #include <math.h>
 #include "RN.h"
 
-void normalize(RN *this) {
+static void normalize(RN *this) {
     //Normalize the negative sign
     if (this->N < 0 && this->D < 0) {
 		this->D = abs(this->D);
@@ -22,7 +22,7 @@ void normalize(RN *this) {
     reduce(this);
 }
 
-void reduce(RN *this) {
+static void reduce(RN *this) {
 	//get the greatest common denominator
 	int gcd = GCD(this->N, this->D);
 
@@ -35,12 +35,12 @@ void reduce(RN *this) {
 	this->D = this->D / gcd;
 }
 
-int LCM(int num1, int num2) {
+static int LCM(int num1, int num2) {
 	//TODO implement a better algorithm then this atrocity
 	return (num1 * num2);
 }
 
-int GCD(int num1, int num2) {
+static int GCD(int num1, int num2) {
     //If the numbers are equal their values are the GCD
     if (num1 == num2)
         return num1;

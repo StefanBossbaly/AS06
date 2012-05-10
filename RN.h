@@ -39,12 +39,12 @@ RN *newS(char *string);
 RN *newI(int numerator, int denominator);
 
 //Sort of private (because the represetation is always reduced)
-void reduce(RN *this);
-void normalize(RN *this);
+static void reduce(RN *this);
+static void normalize(RN *this);
 
 //Other private functions
-int GCD(int num1, int num2);
-int LCM(int num1, int num2);
+static int GCD(int num1, int num2);
+static int LCM(int num1, int num2);
 
 //Math helper functions
 int min(int num1, int num2);
