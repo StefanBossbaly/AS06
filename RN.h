@@ -47,7 +47,7 @@ static int GCD(int num1, int num2);
 static int LCM(int num1, int num2);
 
 //Math helper functions
-int min(int num1, int num2);
+static inline int min(int num1, int num2);
 
 //Accessors
 char *toString(char *buffer, RN *this);
